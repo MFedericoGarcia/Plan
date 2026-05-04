@@ -15,7 +15,7 @@ struct NetworkManager {
         
     }
     
-    func getUsers(for endpoint: String, completed: @escaping([User]?, String?) -> Void) {
+    func getUsers<T: Codable>(for endpoint: String, completed: @escaping([T]?, String?) -> Void) {
         
         guard let url = URL(string: endpoint) else {
             completed(nil, "This is an unvalid request")
@@ -40,9 +40,9 @@ struct NetworkManager {
             
             do {
                 let decoder = JSONDecoder()
-                let products = try decoder.decode([User].self, from: data)
+                let response = try decoder.decode([T].self, from: data)
                 
-                completed(products, nil)
+                completed(response, nil)
                 
             } catch {
                 completed(nil, "The data received from the server was invalid")
