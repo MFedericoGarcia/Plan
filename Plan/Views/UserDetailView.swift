@@ -31,12 +31,12 @@ struct UserDetailView: View {
 
             }
         }
-        .navigationTitle("User: \(user.username) ")
+        .navigationTitle(user.username)
         .navigationBarTitleDisplayMode(.inline)
         .preferredColorScheme(.dark)
     }
 }
 
 #Preview {
-    UserDetailView(user: User(id: 2, name: "Federico", username: "Fede", email: "jhagsgs@shdhds.com", address: Address(street: "casa", suite: "10", city: "SM", zipcode: "1663", geo: Geo(lat: "15", lng: "13")), phone: "12344556", website: "jorge.com", company: Company(name: "Apple", catchPhrase: "hola", bs: "no se que es esto")))
+    UserDetailView(user: User(id: 2, name: "Federdsico fede fede feedfe fedefe", username: "Fede", email: "jhagsgs@shdhds.com", address: Address(street: "casa", suite: "10", city: "SM", zipcode: "1663", geo: Geo(lat: "15", lng: "13")), phone: "12344556", website: "jorge.com", company: Company(name: "Apple", catchPhrase: "hola", bs: "no se que es esto")))
 }
