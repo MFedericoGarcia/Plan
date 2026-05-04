@@ -11,40 +11,32 @@ extension UsersView {
     @Observable
     class ViewModel {
         
-        var state: States = .loading
-        
-        
-        init(users: [User]? = nil) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                NetworkManager.shared.getUsers(for: Endpoints.user) { users, error in
-                    if let us: [User] = users {
-                        self.state = .success(us)
-                    }
-                    
-                    if let error = error {
-                        self.state = .error(error)
-                    }
-                }
-            }
-        }
-        
-        func reload() {
-            NetworkManager.shared.getUsers(for: Endpoints.user) { users, error in
-                if let us: [User] = users {
-                    self.state = .success(us)
-                }
-                
-                if let error = error {
-                    self.state = .error(error)
-                }
-            }
-        }
-        
         enum States {
             case loading
             case success([User])
             case error(String)
         }
-           
+          
+        var state: States = .loading
+        
+        
+        init(users: [User]? = nil) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.load()
+            }
+        }
+        
+        func load() {
+            Task { @MainActor in
+                self.state = .loading
+                do {
+                    let users: [User] = try await NetworkManager.shared.getUsers(for: Endpoints.user)
+                    self.state = .success(users)
+                } catch MyError.runtimeError(let error){
+                    self.state = .error(error)
+                }
+            }
+        }
+        
     }
 }

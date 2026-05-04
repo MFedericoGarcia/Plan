@@ -15,41 +15,27 @@ struct NetworkManager {
         
     }
     
-    func getUsers<T: Codable>(for endpoint: String, completed: @escaping([T]?, String?) -> Void) {
+    func getUsers<T: Codable>(for endpoint: String) async throws -> [T] {
         
         guard let url = URL(string: endpoint) else {
-            completed(nil, "This is an unvalid request")
-            return
+            throw MyError.runtimeError("This is an unvalid request")
         }
         
-        let task = URLSession.shared.dataTask(with: url){ data, response, error in
-            if let _ = error {
-                completed(nil, "Unable to complete the request")
-                return
-            }
+        let (data, response) = try await URLSession.shared.data(from: url)
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completed(nil, "Invalid response from the server")
-                return
+                throw MyError.runtimeError("Invalid response from the server")
             }
-            
-            guard let data = data else {
-                completed(nil, "The data received from the server was invalid")
-                return
-            }
-            
+
             do {
                 let decoder = JSONDecoder()
-                let response = try decoder.decode([T].self, from: data)
-                
-                completed(response, nil)
+                 
+            
+                return try decoder.decode([T].self, from: data)
                 
             } catch {
-                completed(nil, "The data received from the server was invalid")
+                throw MyError.runtimeError("The data received from the server was invalid")
             }
             
-            
-        }
-        task.resume()
     }
 }
