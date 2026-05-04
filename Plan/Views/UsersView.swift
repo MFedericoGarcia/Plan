@@ -22,10 +22,11 @@ struct UsersView: View {
                 }
             case .error(let error):
                 ErrorView(error: error) {
-                    viewModel.reload()
+                    viewModel.load()
                 }
             }
         }
+        .onAppear { viewModel.load() }
         .preferredColorScheme(.dark)
     }
 }
