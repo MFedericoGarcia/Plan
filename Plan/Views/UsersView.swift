@@ -27,6 +27,7 @@ struct UsersView: View {
             }
         }
         .onAppear { viewModel.load() }
+        .clearCacheOnBackground()
         .preferredColorScheme(.dark)
     }
 }

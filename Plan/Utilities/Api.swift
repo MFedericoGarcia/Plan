@@ -9,4 +9,5 @@ import Foundation
 
 struct Endpoints {
     static let user = "https://jsonplaceholder.typicode.com/users"
+    static let key = "user"
 }
