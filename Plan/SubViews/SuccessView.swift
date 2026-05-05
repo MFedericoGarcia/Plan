@@ -10,7 +10,7 @@ import SwiftUI
 struct SuccessView: View {
     
     var users: [User]
-
+    @State private var searchText = ""
     
     var body: some View {
             VStack {
@@ -18,26 +18,15 @@ struct SuccessView: View {
                     ScrollView {
                         VStack {
                             ForEach(users, id: \.id){ user in
-                                NavigationLink {
-                                    UserDetailView(user: user)
-                                } label: {
-                                    ZStack {
-                                        LinearGradient(colors: [.blue, .black] , startPoint: .topLeading, endPoint: .bottomTrailing)
-                                            .ignoresSafeArea()
-                                        VStack {
-                                            Text(user.name)
-                                                .font(.title3.bold())
-                                                .foregroundStyle(.primary)
-                                            Text(user.email)
-                                                .foregroundStyle(.secondary)
-                                        }
-                                        .frame(height: 55)
-                                        .foregroundStyle(.white)
+                                if searchText.isEmpty {
+                                        SuccessFilteredView(user: user)
+                                } else {
+                                    if user.name.localizedStandardContains(searchText) {
+                                        SuccessFilteredView(user: user)
                                     }
-                                    .clipShape(.capsule)
                                 }
-
                             }
+                            .searchable(text: $searchText, placement: .navigationBarDrawer,  prompt: "Buscar por nombre")
                         }
                     }
                     

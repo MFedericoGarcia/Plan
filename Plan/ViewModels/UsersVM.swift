@@ -30,7 +30,7 @@ extension UsersView {
             Task { @MainActor in
                 self.state = .loading
                 do {
-                    let users: [User] = try await NetworkManager.shared.getUsers(for: Endpoints.user)
+                    let users: [User] = try await NetworkManager.shared.getUsers(for: Endpoints.user, with: Endpoints.key)
                     self.state = .success(users)
                 } catch MyError.runtimeError(let error){
                     self.state = .error(error)
