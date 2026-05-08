@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		B76E1D692FAE58150009E6BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7077C2A2FA8F6C6007D30B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7077C312FA8F6C6007D30B2;
+			remoteInfo = Plan;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		B7077C322FA8F6C6007D30B2 /* Plan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B76E1D652FAE58150009E6BA /* PlanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = Plan;
 			sourceTree = "<group>";
 		};
+		B76E1D662FAE58150009E6BA /* PlanTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PlanTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B7077C2F2FA8F6C6007D30B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B76E1D622FAE58150009E6BA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				B7077C342FA8F6C6007D30B2 /* Plan */,
+				B76E1D662FAE58150009E6BA /* PlanTests */,
 				B7077C332FA8F6C6007D30B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				B7077C322FA8F6C6007D30B2 /* Plan.app */,
+				B76E1D652FAE58150009E6BA /* PlanTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 			productReference = B7077C322FA8F6C6007D30B2 /* Plan.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B76E1D642FAE58150009E6BA /* PlanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B76E1D6D2FAE58150009E6BA /* Build configuration list for PBXNativeTarget "PlanTests" */;
+			buildPhases = (
+				B76E1D612FAE58150009E6BA /* Sources */,
+				B76E1D622FAE58150009E6BA /* Frameworks */,
+				B76E1D632FAE58150009E6BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B76E1D6A2FAE58150009E6BA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B76E1D662FAE58150009E6BA /* PlanTests */,
+			);
+			name = PlanTests;
+			packageProductDependencies = (
+			);
+			productName = PlanTests;
+			productReference = B76E1D652FAE58150009E6BA /* PlanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +130,10 @@
 				TargetAttributes = {
 					B7077C312FA8F6C6007D30B2 = {
 						CreatedOnToolsVersion = 26.4.1;
+					};
+					B76E1D642FAE58150009E6BA = {
+						CreatedOnToolsVersion = 26.4.1;
+						TestTargetID = B7077C312FA8F6C6007D30B2;
 					};
 				};
 			};
@@ -100,12 +152,20 @@
 			projectRoot = "";
 			targets = (
 				B7077C312FA8F6C6007D30B2 /* Plan */,
+				B76E1D642FAE58150009E6BA /* PlanTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B7077C302FA8F6C6007D30B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B76E1D632FAE58150009E6BA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +182,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B76E1D612FAE58150009E6BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B76E1D6A2FAE58150009E6BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7077C312FA8F6C6007D30B2 /* Plan */;
+			targetProxy = B76E1D692FAE58150009E6BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B7077C3B2FA8F6C8007D30B2 /* Debug */ = {
@@ -329,6 +404,58 @@
 			};
 			name = Release;
 		};
+		B76E1D6B2FAE58150009E6BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96P56573X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MACOSX_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FedeGarcia.PlanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Plan.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Plan";
+				XROS_DEPLOYMENT_TARGET = 26.4;
+			};
+			name = Debug;
+		};
+		B76E1D6C2FAE58150009E6BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 96P56573X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MACOSX_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FedeGarcia.PlanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Plan.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Plan";
+				XROS_DEPLOYMENT_TARGET = 26.4;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -346,6 +473,15 @@
 			buildConfigurations = (
 				B7077C3E2FA8F6C8007D30B2 /* Debug */,
 				B7077C3F2FA8F6C8007D30B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B76E1D6D2FAE58150009E6BA /* Build configuration list for PBXNativeTarget "PlanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B76E1D6B2FAE58150009E6BA /* Debug */,
+				B76E1D6C2FAE58150009E6BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

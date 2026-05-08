@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct NetworkManager {
+
+protocol NetworkManagingProtocol {
+    func getUsers(for endpoint: String, with key: String) async throws -> [User]
+}
+
+struct NetworkManager: NetworkManagingProtocol {
     
     static let shared = NetworkManager()
     
